@@ -12,8 +12,19 @@ public static class Arrays
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
+        // Create an array with the size eqaul to the number multiples needed
+        // loop through the position and for each position, calculate the multiples.
+        // the first multiple is the number *1 
+        // the second multiple is the number * 2
+        // Continue until all multiples are stored and return the completed array.
 
-        return []; // replace this return statement with your own
+        double[] results = new double[length];
+        for (int i=0; i< length; i++)
+        {
+            results[i] = number * (i +1);
+        }
+
+        return results; 
     }
 
     /// <summary>
@@ -29,5 +40,17 @@ public static class Arrays
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
+        // Determine where the split point will be 
+        // Get the last amount items from the list.
+        // Get the remaining items from the beginning 
+        // Clear the original list.
+        // Add the last section first 
+        // Add the beginning section after it.
+        int splitIndex = data.Count - amount;
+        List<int> rightPart = data.GetRange(splitIndex, amount);
+        List<int> leftPart = data.GetRange(0, splitIndex);
+        data.Clear();
+        data.AddRange(rightPart);
+        data.AddRange(leftPart);
     }
 }
